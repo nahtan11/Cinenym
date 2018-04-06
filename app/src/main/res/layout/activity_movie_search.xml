@@ -79,12 +79,6 @@
                 android:hint="fetched text here"
                 android:id="@+id/fetchedD" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_home_black_24dp" />
-
         </ScrollView>
 
     </LinearLayout>
