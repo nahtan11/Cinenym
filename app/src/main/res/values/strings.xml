@@ -17,7 +17,7 @@
     <string name="cinemasNearby">Cinemas Nearby</string>
     <string name="google_android_map_api_key">AIzaSyBvPJqdgwhew6YE5KgicCDZQDyfHrTvd1s</string>
     //action = 28, adventure = 12, animation = 16, comedy = 35, documentary = 99, drama = 18, family
-    = 10751
+    = 10751, horror = 27
     <string name="action_genre">Action</string>
     <string name="adventure_genre">Adventure</string>
     <string name="animation_genre">Animation</string>
