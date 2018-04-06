@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Cinenym</string>
+    <string name="search">Search</string>
+    <string name="WhatToWatch">What To Watch</string>
+    <string name="SeenItList">Seen-It List</string>
+    <string name="title_activity_movie_search">Movie search </string>
+    <string name="title_activity_what_to_watch">What To Watch</string>
+    <string name="title_activity_seen_it_list">Seen It List</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_cinemas_nearby">Cinemas Nearby</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="action_search">Search</string>
+    <string name="go">GO</string>
+    <string name="profile">Profile</string>
+    <string name="cinemasNearby">Cinemas Nearby</string>
+    <string name="google_android_map_api_key">AIzaSyBvPJqdgwhew6YE5KgicCDZQDyfHrTvd1s</string>
+    //action = 28, adventure = 12, animation = 16, comedy = 35, documentary = 99, drama = 18, family
+    = 10751
+    <string name="action_genre">Action</string>
+    <string name="adventure_genre">Adventure</string>
+    <string name="animation_genre">Animation</string>
+    <string name="comedy_genre">Comedy</string>
+    <string name="documentary_genre">Documentary</string>
+    <string name="drama_genre">Drama</string>
+    <string name="family_genre">Family</string>
+    <string name="horror_genre">Horror</string>
+
+</resources>
