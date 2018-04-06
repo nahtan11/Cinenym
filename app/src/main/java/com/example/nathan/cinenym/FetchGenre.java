@@ -1,4 +1,4 @@
-package com.example.adamcopeland.myfirstapp;
+package com.example.nathan.cinenym;
 
 import android.os.AsyncTask;
 import android.widget.EditText;
@@ -20,10 +20,10 @@ import java.util.Random;
  * Created by Adam Copeland on 12/03/2018.
  */
 
-public class FetchGenera extends AsyncTask<Void, Void, Void>
+public class FetchGenre extends AsyncTask<Void, Void, Void>
 {
     String data="", singleParsed="";
-    protected int genra;
+    protected int genre;
     Random rNumber = new Random();
     int listNumber = rNumber.nextInt(19);
     int pageNumber, rPageNumber;
@@ -31,10 +31,10 @@ public class FetchGenera extends AsyncTask<Void, Void, Void>
 
 
 
-    //needs to be passed an int value maby store in an array action = 28, adventure = 12, animation = 16, comedy = 35, documentary = 99, drama = 18, family = 10751,
-    FetchGenera(int genra)
+    //needs to be passed an int value maybe store in an array action = 28, adventure = 12, animation = 16, comedy = 35, documentary = 99, drama = 18, family = 10751,
+    FetchGenre(int genre)
     {
-        this.genra = genra;
+        this.genre = genre;
 
     }
 
@@ -43,7 +43,7 @@ public class FetchGenera extends AsyncTask<Void, Void, Void>
     {
         try
         {
-            URL url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=6.5&with_genres="+genra);
+            URL url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=6.5&with_genres="+genre);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -54,8 +54,8 @@ public class FetchGenera extends AsyncTask<Void, Void, Void>
                 data = data + line;
             }
 
-            JSONObject genraSearched = new JSONObject(data);
-            pageNumber = genraSearched.getInt("total_pages");
+            JSONObject genreSearched = new JSONObject(data);
+            pageNumber = genreSearched.getInt("total_pages");
             if(pageNumber<1000)
             {
                 pageNumber = pageNumber;
@@ -67,7 +67,7 @@ public class FetchGenera extends AsyncTask<Void, Void, Void>
             }
             //edit code from above to take in for the real random genera
 
-            url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=6.5&with_genres="+genra+"&page="+rPageNumber);
+            url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=6.5&with_genres="+genre+"&page="+rPageNumber);
             HttpURLConnection secondHttpUrl = (HttpURLConnection) url.openConnection();
             InputStream secondInputStream = secondHttpUrl.getInputStream();
             BufferedReader secondBuffR = new BufferedReader(new InputStreamReader(secondInputStream));
@@ -79,11 +79,11 @@ public class FetchGenera extends AsyncTask<Void, Void, Void>
                 data = data +line;
             }
             JSONObject randomSearch = new JSONObject(data);
-            JSONArray genraJArray = new JSONArray(randomSearch.getString("results"));
-            JSONObject genraGot = (JSONObject) genraJArray.get(listNumber);
-            singleParsed = ""+genraGot.getString("title")+"\n"+
-                    "Rating:     "+genraGot.getString("vote_average")+"\n"+
-                    "Overview    "+genraGot.getString("overview");
+            JSONArray genreJArray = new JSONArray(randomSearch.getString("results"));
+            JSONObject genreGot = (JSONObject) genreJArray.get(listNumber);
+            singleParsed = ""+genreGot.getString("title")+"\n"+
+                    "Rating:     "+genreGot.getString("vote_average")+"\n"+
+                    "Overview    "+genreGot.getString("overview");
 
         }catch (MalformedURLException e) {
             e.printStackTrace();
@@ -99,6 +99,6 @@ public class FetchGenera extends AsyncTask<Void, Void, Void>
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        MainActivity.data.setText(singleParsed);
+        ///MainActivity.data.setText(singleParsed);
     }
 }
