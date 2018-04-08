@@ -13,6 +13,13 @@ public class ProfileActivity extends Activity {
         setContentView(R.layout.activity_profile);
     }
 
+    public void onClickTest(View view) {
+        Intent startNewActivity = new Intent(this, LoginActivity.class);
+        // EditText search = (EditText) findViewById(R.id.search);
+        //String message = search.getText().toString();
+        startActivity(startNewActivity);
+    }
+
     public void onClickBack(View view) {
         finish();
     }

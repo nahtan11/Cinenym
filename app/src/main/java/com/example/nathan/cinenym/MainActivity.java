@@ -29,11 +29,13 @@ public class MainActivity extends Activity {
         Intent startNewActivity = new Intent(this, MovieSearchActivity.class);
         EditText search = findViewById(R.id.editText);
         String inputMovie = search.getText().toString();
-        fetchedData process = new fetchedData(inputMovie);
-        process.execute();
-        Toast.makeText(MainActivity.this, inputMovie,
-         Toast.LENGTH_SHORT).show();
-        startActivity(startNewActivity);
+        if(!(inputMovie.length() == 0 || inputMovie.equals(" "))) {
+            fetchedData process = new fetchedData(inputMovie);
+            process.execute();
+            Toast.makeText(MainActivity.this, inputMovie,
+                    Toast.LENGTH_SHORT).show();
+            startActivity(startNewActivity);
+        }
     }
 
     public void onClickWhatToWatch(View view) {
@@ -51,7 +53,7 @@ public class MainActivity extends Activity {
     }
 
     public void onClickProfile(View view) {
-        Intent startNewActivity = new Intent(this, SeenItListActivity.class);
+        Intent startNewActivity = new Intent(this, ProfileActivity.class);
         // EditText search = (EditText) findViewById(R.id.search);
         //String message = search.getText().toString();
         startActivity(startNewActivity);
