@@ -16,7 +16,7 @@ public class RandomMovie extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_movie);
 
-        data = findViewById(R.id.fetchedD);
+        data = findViewById(R.id.fetchedG);
     }
 
 

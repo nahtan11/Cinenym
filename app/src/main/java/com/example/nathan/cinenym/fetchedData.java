@@ -96,6 +96,6 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void aVoid)
     {
         super.onPostExecute(aVoid);
-        MovieSearchActivity.data.setText(dataParsed);
+        MovieSearchActivity.data.setText(movies.get(1).toString());
     }
 }
