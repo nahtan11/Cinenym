@@ -23,7 +23,7 @@ import java.util.Random;
 public class FetchGenre extends AsyncTask<Void, Void, Void>
 {
     String data="", singleParsed="";
-    protected int genre;
+    protected String genre;
     Random rNumber = new Random();
     int listNumber = rNumber.nextInt(19);
     int pageNumber, rPageNumber;
@@ -32,7 +32,7 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
 
 
     //needs to be passed an int value maybe store in an array action = 28, adventure = 12, animation = 16, comedy = 35, documentary = 99, drama = 18, family = 10751,
-    FetchGenre(int genre)
+    FetchGenre(String genre)
     {
         this.genre = genre;
 

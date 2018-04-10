@@ -76,8 +76,8 @@
                     android:padding="5dp"
                     android:textSize="24sp"
                     android:textColor="@android:color/white"
-                    android:hint="fetched text here"
-                    android:id="@+id/fetchedD" />
+                    android:hint="@string/loading"
+                    android:id="@+id/fetchedG" />
 
             </ScrollView>
 
