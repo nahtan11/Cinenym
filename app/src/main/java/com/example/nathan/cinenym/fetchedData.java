@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * Created by Adam Copeland on 08/03/2018.
@@ -27,6 +28,7 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
     String dataParsed="";
     String singleParsed="";
     protected String movie;
+    ArrayList<Movie> movies = new ArrayList<Movie>();
 
     fetchedData(String movie)
     {
@@ -58,7 +60,7 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
             }
             else
             {
-                JSONArray jsonArray = new JSONArray(totalSearched.getString("results"));
+                /*JSONArray jsonArray = new JSONArray(totalSearched.getString("results"));
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     jsonObject.isNull("");
@@ -67,7 +69,16 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
                             "Overview:    " + jsonObject.getString("overview") + "\n\n";
 
                     dataParsed += singleParsed;
+                }*/
+
+                JSONArray jsonArray = new JSONArray(totalSearched.getString("results"));
+                for(int i=0;i<jsonArray.length(); i++)
+                {
+                    JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+                    movies.add(new Movie(jsonObject.getString("title"), jsonObject.getString("vote_average"), jsonObject.getString("overview"), jsonObject.getString("poster_path")));
+                    dataParsed += movies.get(i).toString();
                 }
+
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();

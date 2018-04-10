@@ -43,7 +43,7 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
     {
         try
         {
-            URL url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=6.5&with_genres="+genre);
+            URL url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=7.5&with_genres="+genre);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -67,7 +67,7 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
             }
             //edit code from above to take in for the real random genera
 
-            url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=6.5&with_genres="+genre+"&page="+rPageNumber);
+            url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=7.5&with_genres="+genre+"&page="+rPageNumber);
             HttpURLConnection secondHttpUrl = (HttpURLConnection) url.openConnection();
             InputStream secondInputStream = secondHttpUrl.getInputStream();
             BufferedReader secondBuffR = new BufferedReader(new InputStreamReader(secondInputStream));
@@ -99,6 +99,6 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        ///MainActivity.data.setText(singleParsed);
+        RandomMovie.data.setText(singleParsed);
     }
 }
