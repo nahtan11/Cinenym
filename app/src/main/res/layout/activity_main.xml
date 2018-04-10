@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkGrey"
+    android:background="@drawable/background_style_selector"
     tools:context=".MainActivity">
 
     <ImageView
@@ -116,7 +116,6 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:backgroundTint="@color/aqua"
                 app:cardCornerRadius="6dp">
 
 
@@ -124,12 +123,13 @@
                     android:id="@+id/button26"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button_style_selector"
                     android:onClick="onClickWhatToWatch"/>
 
                 <ImageView
                     android:id="@+id/imageView61"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="236dp"
                     android:layout_marginBottom="50dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
@@ -156,13 +156,13 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:backgroundTint="@color/aqua"
                 app:cardCornerRadius="2dp">
 
                 <Button
                     android:id="@+id/button26"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button_style_selector"
                     android:onClick="onClickSeenItList"/>
 
                 <ImageView
@@ -195,13 +195,13 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/aqua"
                 app:cardCornerRadius="2dp">
 
                 <Button
                     android:id="@+id/button23"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button_style_selector"
                     android:onClick="onClickProfile"/>
 
                 <ImageView
@@ -235,13 +235,13 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/aqua"
                 app:cardCornerRadius="2dp">
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button_style_selector"
                     android:onClick="onClickWhatToWatch"/>
 
                 <ImageView
