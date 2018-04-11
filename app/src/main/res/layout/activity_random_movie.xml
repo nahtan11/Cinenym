@@ -67,19 +67,40 @@
 
 
             <ScrollView
+                android:id="@+id/scrollView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/scrollView">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/white"
-                    android:hint="@string/loading"
-                    android:id="@+id/fetchedG" />
+                android:layout_height="match_parent">
 
             </ScrollView>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imV"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/fetchedG"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fetchedG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="364dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imV" />
+            </android.support.constraint.ConstraintLayout>
+
 
         </LinearLayout>
     </ScrollView>
