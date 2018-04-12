@@ -1,5 +1,7 @@
 package com.example.nathan.cinenym;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.widget.EditText;
 
@@ -27,6 +29,7 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
     Random rNumber = new Random();
     int listNumber = rNumber.nextInt(19);
     int pageNumber, rPageNumber;
+    public static Bitmap logo = null;
 
 
 
@@ -41,6 +44,7 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
     @Override
     protected Void doInBackground(Void... voids)
     {
+
         try
         {
             URL url = new URL("https://api.themoviedb.org/3/discover/movie?api_key=99038db7d4813b9d7fd41e54322a61dc&include_adult=false&vote_average.gte=7.5&with_genres="+genre);
@@ -85,6 +89,9 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
                     "Rating:     "+genreGot.getString("vote_average")+"\n"+
                     "Overview    "+genreGot.getString("overview");
 
+            InputStream is = new URL("https://image.tmdb.org/t/p/original"+genreGot.getString("poster_path")).openStream();
+            logo = BitmapFactory.decodeStream(is);
+
         }catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -99,6 +106,7 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        RandomMovie.data.setText(singleParsed);
+        RandomMovie.dataR.setText(singleParsed);
+        RandomMovie.imR.setImageBitmap(logo);
     }
 }

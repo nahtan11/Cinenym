@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
 
@@ -19,22 +21,20 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
     }
+    public static ArrayList<Movie> moviesArray = new ArrayList<Movie>();
 
 
     public void onClickSearch(View view) {
-        Intent startNewActivity = new Intent(this, MovieSearchActivity.class);
         EditText search = findViewById(R.id.editText);
         String inputMovie = search.getText().toString();
+        Intent startNewActivity = new Intent(this, MovieSearchActivity.class);
+        startActivity(startNewActivity);
         if(!(inputMovie.length() == 0 || inputMovie.equals(" "))) {
             fetchedData process = new fetchedData(inputMovie);
             process.execute();
             Toast.makeText(MainActivity.this, inputMovie,
                     Toast.LENGTH_SHORT).show();
-            startActivity(startNewActivity);
         }
     }
 

@@ -25,4 +25,8 @@ public class Movie {
     {
         return ""+name+"\nRating:   "+rating+"\nOverview:   "+overview;
     }
+
+    public String getLinkToImage() {
+        return linkToImage;
+    }
 }
