@@ -92,13 +92,17 @@ public class FetchGenre extends AsyncTask<Void, Void, Void>
             InputStream is = new URL("https://image.tmdb.org/t/p/original"+genreGot.getString("poster_path")).openStream();
             logo = BitmapFactory.decodeStream(is);
 
-        }catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        }
+        catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
         return null;
     }

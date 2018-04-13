@@ -15,8 +15,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +27,9 @@ public class MainActivity extends Activity {
         EditText search = findViewById(R.id.editText);
         String inputMovie = search.getText().toString();
         Intent startNewActivity = new Intent(this, MovieSearchActivity.class);
-        startActivity(startNewActivity);
+
         if(!(inputMovie.length() == 0 || inputMovie.equals(" "))) {
+            startActivity(startNewActivity);
             fetchedData process = new fetchedData(inputMovie);
             process.execute();
             Toast.makeText(MainActivity.this, inputMovie,
