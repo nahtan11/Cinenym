@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "911350194283",
+    "firebase_url": "https://cinenym-9d695.firebaseio.com",
+    "project_id": "cinenym-9d695",
+    "storage_bucket": "cinenym-9d695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911350194283:android:57012d04fcd1d1ae",
+        "android_client_info": {
+          "package_name": "com.example.danie.firebasestuff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911350194283-o796hqg8peh5d2ti7mfnv4prb17rr7ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsXm7MjQVQgrMap1dDUiP5kOqtDC__iYk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911350194283:android:738017f4e57e7299",
+        "android_client_info": {
+          "package_name": "com.example.g16016432.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911350194283-ol4n70f2uasa2uqe9qvjji63bk2tq83p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.g16016432.firebase",
+            "certificate_hash": "4e4ed807198a89e96dc02e0b428323e93fb2f219"
+          }
+        },
+        {
+          "client_id": "911350194283-o796hqg8peh5d2ti7mfnv4prb17rr7ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsXm7MjQVQgrMap1dDUiP5kOqtDC__iYk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911350194283-o796hqg8peh5d2ti7mfnv4prb17rr7ue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911350194283:android:a3899e83d5a49bab",
+        "android_client_info": {
+          "package_name": "com.example.nathan.cinenym"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911350194283-bt74ul5hr3804cs16jsvckiql1ppt619.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nathan.cinenym",
+            "certificate_hash": "78bd332da0e4fbaa5956345edd250e4095c81b13"
+          }
+        },
+        {
+          "client_id": "911350194283-o796hqg8peh5d2ti7mfnv4prb17rr7ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsXm7MjQVQgrMap1dDUiP5kOqtDC__iYk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911350194283-o796hqg8peh5d2ti7mfnv4prb17rr7ue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
