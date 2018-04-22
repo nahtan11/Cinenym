@@ -3,6 +3,8 @@ package com.example.nathan.cinenym;
 import android.app.DownloadManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.AsyncTask;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -25,6 +27,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Adam Copeland on 08/03/2018.
@@ -58,7 +61,7 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line = "";
-            Bitmap logo = null;
+
             while(line != null){
                 line = bufferedReader.readLine();
                 data = data + line;
@@ -72,28 +75,20 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
             }
             else
             {
-                /*JSONArray jsonArray = new JSONArray(totalSearched.getString("results"));
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                    jsonObject.isNull("");
-                    singleParsed = "" + jsonObject.getString("title") + "\n" +
-                            "Rating:         " + jsonObject.getString("vote_average") + "\n" +
-                            "Overview:    " + jsonObject.getString("overview") + "\n\n";
-
-                    dataParsed += singleParsed;
-                }*/
 
                 JSONArray jsonArray = new JSONArray(totalSearched.getString("results"));
                 for(int i=0;i<jsonArray.length(); i++)
                 {
-
+                    Bitmap logo;
                     JSONObject jsonObject = (JSONObject) jsonArray.get(i);
                     movies.add(new Movie(jsonObject.getString("title"), jsonObject.getString("vote_average"), jsonObject.getString("overview"), jsonObject.getString("poster_path")));
-                    //dataParsed += movies.get(i).toString();
+
                     InputStream is = new URL("https://image.tmdb.org/t/p/original"+movies.get(i).getLinkToImage()).openStream();
                     logo = BitmapFactory.decodeStream(is);
-                    //httpURLConnection.disconnect();
+                    httpURLConnection.disconnect();
                     posters.add(logo);
+
+
 
                 }
 
@@ -115,44 +110,6 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid)
     {
-        /*boolean test=false;
-        if(movies.size()<20)
-        {
-            test = true;
-        }
-
-        super.onPostExecute(aVoid);
-        if(!test) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            MovieSearchActivity.data18.setText(movies.get(17).toString());
-            MovieSearchActivity.im18.setImageBitmap(posters.get(17));
-            MovieSearchActivity.data19.setText(movies.get(18).toString());
-            MovieSearchActivity.im19.setImageBitmap(posters.get(18));
-            MovieSearchActivity.data20.setText(movies.get(19).toString());
-            MovieSearchActivity.im20.setImageBitmap(posters.get(19));
-        }
-        else {
-            MovieSearchActivity.data1.setText(movies.get(0).toString());
-            MovieSearchActivity.im1.setImageBitmap(posters.get(0));
-        }*/
-
-
 
         for(int i = 0; i < movies.size()-1;i++)
         switch (i) {
@@ -222,5 +179,6 @@ public class fetchedData extends AsyncTask<Void, Void, Void> {
                 break;
 
         }
+        posters.clear();
     }
 }
