@@ -2,6 +2,7 @@ package com.example.nathan.cinenym;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -86,6 +87,9 @@ public class SignUpActivity extends Activity {
                     }
                 });
         progressDialog.dismiss();
+        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 

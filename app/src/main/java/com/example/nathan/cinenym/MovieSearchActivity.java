@@ -29,8 +29,8 @@ import java.util.ArrayList;
 
 public class MovieSearchActivity extends Activity {
 
-    static TextView data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13,data14,data15,data16,data17,data18,data19,data20;
-    static ImageView im1,im2,im3,im4,im5,im6,im7,im8,im9,im10,im11,im12,im13,im14,im15,im16,im17,im18,im19,im20;
+    static TextView data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13,data14,data15,data16,data17,data18,data19,data20 = null;
+    static ImageView im1,im2,im3,im4,im5,im6,im7,im8,im9,im10,im11,im12,im13,im14,im15,im16,im17,im18,im19,im20 =null;
     static ImageButton add1,add2,add3,add4,add5,add6,add7,add8;
 
 
@@ -81,13 +81,16 @@ public class MovieSearchActivity extends Activity {
             im20= (ImageView) findViewById(R.id.movieWTW19);
 
     }
-    ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton2);
+   // ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton2);
 
 
 
 
 
     public void onClickBack(View view) {
+
+
         finish();
+
     }
 }

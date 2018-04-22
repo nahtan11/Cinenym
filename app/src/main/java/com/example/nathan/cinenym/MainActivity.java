@@ -25,23 +25,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       /* final Button signOut = findViewById(R.id.signOut);
-        mAuth = mAuth.getInstance();
-        Intent intent = getIntent();
-        Uid = intent.getStringExtra("ID");
-        if(Uid != null)
-            signOut.setVisibility(View.VISIBLE);
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    mAuth.signOut();
-                    signOut.setVisibility(View.INVISIBLE);
-                    Toast.makeText(MainActivity.this, "Successfully Logged Out", Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
     }
-    //public static ArrayList<Movie> moviesArray = new ArrayList<Movie>();
 
 
     public void onClickSearch(View view) {

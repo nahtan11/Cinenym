@@ -19,9 +19,9 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -41,23 +41,31 @@
         </activity>
         <activity
             android:name=".MovieSearchActivity"
-            android:label="@string/title_activity_movie_search" />
+            android:label="@string/title_activity_movie_search"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".WhatToWatchActivity"
-            android:label="@string/title_activity_what_to_watch" />
+            android:label="@string/title_activity_what_to_watch"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SeenItListActivity"
-            android:label="@string/title_activity_seen_it_list" />
+            android:label="@string/title_activity_seen_it_list"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ProfileActivity"
-            android:label="@string/title_activity_profile" />
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RandomMovie"
-            android:label="@string/title_activity_random_movie" />
+            android:label="@string/title_activity_random_movie"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".SignUpActivity" />
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
