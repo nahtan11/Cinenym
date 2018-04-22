@@ -59,8 +59,9 @@ public class LoginActivity extends Activity  {
         super.onStart();
         if(mAuth.getCurrentUser() != null){
             finish();
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, ProfileActivity.class);
             intent.putExtra("ID",mAuth.getCurrentUser().getUid());
+            Toast.makeText(LoginActivity.this, mAuth.getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }
     }
