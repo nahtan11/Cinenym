@@ -11,10 +11,14 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +31,7 @@ public class MovieSearchActivity extends Activity {
 
     static TextView data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13,data14,data15,data16,data17,data18,data19,data20;
     static ImageView im1,im2,im3,im4,im5,im6,im7,im8,im9,im10,im11,im12,im13,im14,im15,im16,im17,im18,im19,im20;
+    static ImageButton add1,add2,add3,add4,add5,add6,add7,add8;
 
 
     @Override
@@ -35,6 +40,7 @@ public class MovieSearchActivity extends Activity {
         setContentView(R.layout.activity_movie_search);
             data1 = (TextView) findViewById(R.id.fetchedD0);
             im1 = (ImageView) findViewById(R.id.movieWTW0);
+            add1 = (ImageButton) findViewById(R.id.btAdd0);
             data2 = (TextView) findViewById(R.id.fetchedD1);
             im2 = (ImageView) findViewById(R.id.movieWTW1);
             data3 = (TextView) findViewById(R.id.fetchedD2);
@@ -75,6 +81,9 @@ public class MovieSearchActivity extends Activity {
             im20= (ImageView) findViewById(R.id.movieWTW19);
 
     }
+    ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton2);
+
+
 
 
 

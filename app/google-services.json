@@ -90,6 +90,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "911350194283-halk186u0h4gro76pop6gsmevb895lt9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nathan.cinenym",
+            "certificate_hash": "7111414542d880e853fe8812daf7595d279e64db"
+          }
+        },
+        {
           "client_id": "911350194283-bt74ul5hr3804cs16jsvckiql1ppt619.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

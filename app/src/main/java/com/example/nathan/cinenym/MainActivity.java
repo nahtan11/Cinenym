@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final Button signOut = findViewById(R.id.signOut);
+       /* final Button signOut = findViewById(R.id.signOut);
         mAuth = mAuth.getInstance();
         Intent intent = getIntent();
         Uid = intent.getStringExtra("ID");
@@ -38,10 +38,10 @@ public class MainActivity extends Activity {
                     signOut.setVisibility(View.INVISIBLE);
                     Toast.makeText(MainActivity.this, "Successfully Logged Out", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
     }
-    public static ArrayList<Movie> moviesArray = new ArrayList<Movie>();
+    //public static ArrayList<Movie> moviesArray = new ArrayList<Movie>();
 
 
     public void onClickSearch(View view) {
@@ -73,10 +73,14 @@ public class MainActivity extends Activity {
     }
 
     public void onClickProfile(View view) {
-        Intent startNewActivity = new Intent(this, ProfileActivity.class);
-        // EditText search = (EditText) findViewById(R.id.search);
-        //String message = search.getText().toString();
-        startActivity(startNewActivity);
+        if(Uid != null) {
+            Intent startNewActivity = new Intent(this, ProfileActivity.class);
+            startActivity(startNewActivity);
+        }
+        else{
+            Intent startNewActivity = new Intent(this, LoginActivity.class);
+            startActivity(startNewActivity);
+        }
     }
 
 }
