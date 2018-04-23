@@ -15,7 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends Activity {
 
@@ -53,7 +54,7 @@ public class SignUpActivity extends Activity {
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String username = editTextUsername.getText().toString().trim();
+        final String username = editTextUsername.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             // email left blank
@@ -77,9 +78,14 @@ public class SignUpActivity extends Activity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            //succesfully registered
-                            //start cinenym activity here
                             Toast.makeText(SignUpActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            String uID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            if(uID != null) {
+                                DatabaseReference data = FirebaseDatabase.getInstance().getReference("Users").child(uID).child(username);
+                                data.push();
+                                User user = new User(username, "");
+                                data.setValue(user);
+                            }
                         }
                         else {
                             Toast.makeText(SignUpActivity.this, "Failed to Register", Toast.LENGTH_SHORT).show();
@@ -91,6 +97,8 @@ public class SignUpActivity extends Activity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+
 
 
 

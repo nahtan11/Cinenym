@@ -93,38 +93,25 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/btAdd0"
+                        app:layout_constraintBottom_toTopOf="@+id/btAdd"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageButton
-                        android:id="@+id/btAdd0"
+                        android:id="@+id/btAdd"
                         android:layout_width="84dp"
                         android:layout_height="69dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:src="@drawable/star"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/movieWTW0"
                         app:layout_constraintBottom_toTopOf="@+id/fetchedD0"
-                        tools:layout_editor_absoluteY="164dp" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.032"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/movieWTW0" />
 
-                    <ToggleButton
-                        android:id="@+id/toggleButton2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/movieWTW0"
-                        app:layout_constraintBottom_toTopOf="@+id/fetchedD0"
-                        android:text="ToggleButton"
-                        android:textOn="Light ON"
-                        android:textOff="Light OFF"/>
 
                     <TextView
                         android:id="@+id/fetchedD0"

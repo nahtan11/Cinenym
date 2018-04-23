@@ -10,6 +10,10 @@ public class Movie {
     private String overview;
     private String linkToImage;
 
+    public Movie() {
+
+    }
+
     public Movie(String name, String rating, String overview, String linkToImage)
     {
         this.name = name;
@@ -17,16 +21,50 @@ public class Movie {
         this.overview = overview;
         this.linkToImage = linkToImage;
     }
-    public String getImageLink()
-    {
-        return linkToImage;
+
+    public Movie(String name) {
+        this.name = name;
     }
-    public String toString()
-    {
-        return ""+name+"\nRating:   "+rating+"\nOverview:   "+overview;
+
+    public String getOverview() {
+
+        return overview;
+    }
+
+    public String getRating() {
+        return rating;
+
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public void setLinkToImage(String linkToImage) {
+        this.linkToImage = linkToImage;
+    }
+
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getLinkToImage() {
         return linkToImage;
     }
+
+    public String toString()
+    {
+        return ""+name+"\nRating:   "+rating+"\nOverview:   "+overview;
+    }
+
 }

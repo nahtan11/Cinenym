@@ -1,31 +1,17 @@
 package com.example.nathan.cinenym;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MovieSearchActivity extends Activity {
 
@@ -38,9 +24,12 @@ public class MovieSearchActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_search);
+        Intent i = getIntent();
+        final String movieName = i.getStringExtra("Movie");
+        ImageButton but = (ImageButton) findViewById(R.id.btAdd);
             data1 = (TextView) findViewById(R.id.fetchedD0);
             im1 = (ImageView) findViewById(R.id.movieWTW0);
-            add1 = (ImageButton) findViewById(R.id.btAdd0);
+            add1 = (ImageButton) findViewById(R.id.btAdd);
             data2 = (TextView) findViewById(R.id.fetchedD1);
             im2 = (ImageView) findViewById(R.id.movieWTW1);
             data3 = (TextView) findViewById(R.id.fetchedD2);
@@ -79,6 +68,23 @@ public class MovieSearchActivity extends Activity {
             im19 = (ImageView) findViewById(R.id.movieWTW18);
             data20 = (TextView) findViewById(R.id.fetchedD19);
             im20= (ImageView) findViewById(R.id.movieWTW19);
+
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                if(uID != null) {
+                    DatabaseReference data = FirebaseDatabase.getInstance().getReference(uID).child(movieName);
+                    data.push();
+                    Movie movie = new Movie(movieName);
+                    data.setValue(movie);
+                    Toast.makeText(MovieSearchActivity.this, movieName
+                            + " added to seen it list.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(MovieSearchActivity.this, "Sign in or create account", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
    // ToggleButton toggle = (ToggleButton) findViewById(R.id.toggleButton2);
